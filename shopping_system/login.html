@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Njeru's Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Njeru's Shop</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Welcome Back!</h2>
+                    <p>Sign in to your Njeru's account>📧</span>
+                            Email Address
+                        </label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="your.email@example.com"
+                               autocomplete="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">
+                            <span class="icon">🔒</span>
+                            Password
+                        </label>
+                        <input type="password" id="password" name="password" required 
+                               placeholder="Enter your password"
+                               autocomplete="current-password">
+                        <div class="password-actions">
+                            <button type="button" id="toggle-password" class="toggle-password">
+                                <span class="eye-icon">👁️</span>
+                                <span class="toggle-text">Show</span>
+                            </button>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember" class="checkbox-label">
+                            Remember me for 30 days
+                        </label>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        <span class="button-text">Sign In</span>
+                        <span class="button-loader">⏳</span>
+                    </button>
+
+                    <div class="divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-button google-button">
+                            <span class="social-icon">🔍</span>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="social-button facebook-button">
+                            <span class="social-icon">👤</span>
+                            <span>Facebook</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="register.html" class="auth-link">Create one here</a></p>
+                </div>
+
+                <div class="login-benefits">
+                    <h3>Welcome Back Benefits</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🛒</span>
+                            <span>Quick checkout</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎁</span>
+                            <span>Personalized deals</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📦</span>
+                            <span>Order history</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">❤️</span>
+                            <span>Saved favorites</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Reset Your Password</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Enter your email address and we'll send you a link to reset your password.</p>
+                <div class="form-group">
+                    <input type="email" id="reset-email" placeholder="your.email@example.com">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-button">Cancel</button>
+                <button class="auth-button">Send Reset Link</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

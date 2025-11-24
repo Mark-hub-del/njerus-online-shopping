@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Njeru's Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Njeru's Shop</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Create Your Account</h2>
+                    <p>Join thousands of happy shoppers at Njeru's Shop</p>
+                </div>
+
+                <form id="registration-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            <span class="icon">👤</span>
+                            Full Name
+                        </label>
+                        <input type="text" id="name" name="name" required 
+                               placeholder="Enter your full name">
+                        <div class="form-hint">As it appears on your ID</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            <span class="icon">📧</span>
+                            Email Address
+                        </label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">
+                            <span class="icon">📱</span>
+                            Phone Number
+                        </label>
+                        <input type="tel" id="phone" name="phone" required 
+                               placeholder="07XX XXX XXX" pattern="[0-9]{10}">
+                        <div class="form-hint">For MPesa payments and order updates</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">
+                            <span class="icon">🔒</span>
+                            Password
+                        </label>
+                        <input type="password" id="password" name="password" required 
+                               placeholder="Create a strong password" minlength="6">
+                        <div class="password-strength">
+                            <div class="strength-bar"></div>
+                            <div class="strength-text">Password strength</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password" class="form-label">
+                            <span class="icon">✅</span>
+                            Confirm Password
+                        </label>
+                        <input type="password" id="confirm-password" name="confirm-password" required 
+                               placeholder="Repeat your password">
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms" class="checkbox-label">
+                            I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        <span class="button-text">Create Account</span>
+                        <span class="button-loader">⏳</span>
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html" class="auth-link">Sign in here</a></p>
+                </div>
+
+                <div class="benefits">
+                    <h3>Why join Njeru's Shop?</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🚚</span>
+                            <span>Fast & Free Delivery</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🔒</span>
+                            <span>Secure MPesa Payments</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">⭐</span>
+                            <span>Exclusive Member Deals</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📞</span>
+                            <span>24/7 Customer Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

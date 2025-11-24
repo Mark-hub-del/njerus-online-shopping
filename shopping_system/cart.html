@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Njeru's Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Njeru's Shop</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cart-container">
+            <!-- Progress Indicator -->
+            <div class="checkout-progress">
+                <div class="progress-steps">
+                    <div class="progress-step active">
+                        <div class="step-number">1</div>
+                        <span class="step-text">Cart</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">2</div>
+                        <span class="step-text">Checkout</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">3</div>
+                        <span class="step-text">Confirmation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-header">
+                <h1>🛒 Your Shopping Cart</h1>
+                <p class="cart-subtitle">Review your items and proceed to checkout</p>
+            </div>
+
+            <div class="cart-layout">
+                <div class="cart-items-section">
+                    <div class="section-header">
+                        <h2>Cart Items (<span id="items-count">0</span>)</h2>
+                        <div class="cart-actions">
+                            <button class="action-btn secondary" id="continue-shopping">
+                                <span class="icon">←</span>
+                                Continue Shopping
+                            </button>
+                            <button class="action-btn danger" id="clear-cart">
+                                <span class="icon">🗑️</span>
+                                Clear Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cart-items" id="cart-items">
+                        <div class="empty-cart" id="empty-cart">
+                            <div class="empty-cart-illustration">
+                                <div class="cart-icon">🛒</div>
+                                <div class="floating-items">
+                                    <span class="floating-item">📱</span>
+                                    <span class="floating-item">💻</span>
+                                    <span class="floating-item">🎧</span>
+                                    <span class="floating-item">⌚</span>
+                                </div>
+                            </div>
+                            <h3>Your cart feels lonely</h3>
+                            <p>Add some amazing products to get started with your shopping journey!</p>
+                            <a href="products.html" class="cta-button pulse">
+                                <span class="icon">🚀</span>
+                                Explore Products
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Savings Banner -->
+                    <div class="savings-banner" id="savings-banner">
+                        <div class="banner-icon">🎉</div>
+                        <div class="banner-content">
+                            <strong>Great Deal!</strong>
+                            <span>You're saving <span class="savings-amount">KSh 0</span> on this order</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-summary-section">
+                    <div class="summary-card">
+                        <div class="summary-header">
+                            <h3>Order Summary</h3>
+                            <div class="summary-badge" id="summary-badge">
+                                <span class="badge-icon">⭐</span>
+                                <span>Best Value</span>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Subtotal (<span id="items-count-summary">0</span> items):</span>
+                                <span id="subtotal-amount">KSh 0</span>
+                            </div>
+                            
+                            <div class="summary-row discount">
+                                <span>
+                                    <span class="icon">🎁</span>
+                                    Discount
+                                </span>
+                                <span class="discount-amount">-KSh 0</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span>
+                                    <span class="icon">🚚</span>
+                                    Shipping
+                                </span>
+                                <span id="shipping-amount">KSh 0</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span>
+                                    <span class="icon">🏛️</span>
+                                    Tax (14%)
+                                </span>
+                                <span id="tax-amount">KSh 0</span>
+                            </div>
+                            
+                            <div class="summary-divider"></div>
+                            
+                            <div class="summary-row total">
+                                <span>Total Amount:</span>
+                                <span id="total-amount">KSh 0</span>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="shipping-progress">
+                            <div class="progress-label">
+                                <span class="icon">🎯</span>
+                                <span>Free shipping unlocked!</span>
+                            </div>
+                        </div>
+
+                        <button class="checkout-btn" id="checkout-btn">
+                            <span class="button-icon">💳</span>
+                            <span class="button-text">Proceed to Checkout</span>
+                            <span class="button-arrow">→</span>
+                        </button>
+
+                        <div class="trust-badges">
+                            <div class="trust-badge">
+                                <span class="badge-icon">🔒</span>
+                                <span>Secure Payment</span>
+                            </div>
+                            <div class="trust-badge">
+                                <span class="badge-icon">🚚</span>
+                                <span>Fast Delivery</span>
+                            </div>
+                            <div class="trust-badge">
+                                <span class="badge-icon">↩️</span>
+                                <span>Easy Returns</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo Code Section -->
+                    <div class="promo-card">
+                        <div class="promo-header">
+                            <span class="icon">🎁</span>
+                            <h4>Apply Promo Code</h4>
+                        </div>
+                        <div class="promo-input-group">
+                            <input type="text" id="promo-code" placeholder="Enter promo code" class="promo-input">
+                            <button class="promo-apply" id="apply-promo">Apply</button>
+                        </div>
+                        <div class="promo-suggestions">
+                            <span class="promo-suggestion" data-code="WELCOME10">WELCOME10 - 10% off</span>
+                            <span class="promo-suggestion" data-code="FREESHIP">FREESHIP - Free shipping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recently Viewed Section -->
+            <div class="recently-viewed">
+                <div class="section-header">
+                    <h3>Frequently Bought Together</h3>
+                    <div class="view-controls">
+                        <button class="view-btn prev" id="prev-suggestions">‹</button>
+                        <button class="view-btn next" id="next-suggestions">›</button>
+                    </div>
+                </div>
+                <div class="suggestions-container">
+                    <div class="suggestions-track" id="suggestions-track">
+                        <!-- Suggested products will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Enhanced Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h3>Complete Your Purchase</h3>
+                    <div class="order-total">Total: <span id="modal-total">KSh 0</span></div>
+                </div>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-tabs">
+                    <button class="tab-btn active" data-tab="payment">Payment</button>
+                    <button class="tab-btn" data-tab="review">Order Review</button>
+                </div>
+
+                <div class="tab-content active" id="payment-tab">
+                    <div class="checkout-method">
+                        <h4>Select Payment Method</h4>
+                        <div class="payment-options">
+                            <label class="payment-option selected">
+                                <input type="radio" name="payment" value="mpesa" checked>
+                                <span class="payment-icon">📱</span>
+                                <span class="payment-info">
+                                    <strong>MPesa</strong>
+                                    <span>Pay via MPesa</span>
+                                </span>
+                                <span class="payment-badge">Popular</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card">
+                                <span class="payment-icon">💳</span>
+                                <span class="payment-info">
+                                    <strong>Credit/Debit Card</strong>
+                                    <span>Pay with card</span>
+                                </span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="bank">
+                                <span class="payment-icon">🏦</span>
+                                <span class="payment-info">
+                                    <strong>Bank Transfer</strong>
+                                    <span>Direct bank transfer</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mpesa-payment active" id="mpesa-payment">
+                        <div class="form-group">
+                            <label for="mpesa-phone">MPesa Phone Number</label>
+                            <input type="tel" id="mpesa-phone" placeholder="07XX XXX XXX" 
+                                   pattern="[0-9]{10}" value="0742000000">
+                        </div>
+                        <div class="payment-instructions">
+                            <div class="instruction-step">
+                                <span class="step-number">1</span>
+                                <span>Enter your MPesa PIN when prompted</span>
+                            </div>
+                            <div class="instruction-step">
+                                <span class="step-number">2</span>
+                                <span>Wait for confirmation message</span>
+                            </div>
+                            <div class="instruction-step">
+                                <span class="step-number">3</span>
+                                <span>Receive order confirmation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="review-tab">
+                    <div class="order-review">
+                        <h4>Order Details</h4>
+                        <div class="review-items" id="review-items">
+                            <!-- Order items will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="secondary-button" id="cancel-checkout">
+                    <span class="icon">←</span>
+                    Back to Cart
+                </button>
+                <button class="auth-button" id="confirm-payment">
+                    <span class="button-text">Confirm & Pay</span>
+                    <span class="button-loader">⏳</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content confirmation-modal">
+            <div class="confirmation-header">
+                <div class="confirmation-icon">🎉</div>
+                <h3>Order Confirmed!</h3>
+            </div>
+            <div class="confirmation-body">
+                <p>Thank you for your purchase! Your order has been successfully placed.</p>
+                <div class="order-details">
+                    <div class="order-info">
+                        <span class="label">Order ID:</span>
+                        <span class="value" id="order-id">NJOU-${Date.now()}</span>
+                    </div>
+                    <div class="order-info">
+                        <span class="label">Estimated Delivery:</span>
+                        <span class="value">2-3 business days</span>
+                    </div>
+                </div>
+            </div>
+            <div class="confirmation-footer">
+                <button class="secondary-button" id="continue-shopping-modal">Continue Shopping</button>
+                <button class="auth-button" id="view-order">Track Order</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
